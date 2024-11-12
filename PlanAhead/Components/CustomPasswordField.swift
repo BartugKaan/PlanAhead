@@ -29,6 +29,6 @@ struct CustomPasswordField: View {
 
 #Preview {
     @Previewable @State var text = ""
-    @Previewable @State var label = "Email"
-    CustomTextField(text: $text, label: label)
+    @Previewable @State var label = "Password"
+    CustomPasswordField(text: $text, label: label)
 }
