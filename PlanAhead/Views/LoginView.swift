@@ -16,26 +16,24 @@ struct LoginView: View {
                 // Header
                 HeaderView()
                 // Input Field - Email, Password, Button
-                Form{
-                    TextField("Email", text: $email)
-                    SecureField("Password", text: $password)
+                VStack{
+                    CustomTextField(text: $email, label: "Email Address")
+                        .padding(.vertical, 25)
+                    CustomPasswordField(text: $password, label: "Password")
+                        .padding(.bottom, 25)
                     Button {
-                        
+                        //Action
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 15)
+                            RoundedRectangle(cornerRadius: 25)
+                                .frame(width: UIScreen.main.bounds.width - 50, height: 50)
                                 .foregroundStyle(Color("SecondaryColor"))
-                            Text("Login")
-                                .foregroundStyle(Color("LogoTextColor"))
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                                .padding(.all, 8)
+                            Text("Log In")
+                                .foregroundStyle(.white)
+                                .font(.headline)
                         }
                     }
-                    .padding(8)
                 }
-                .scrollDisabled(true)
-                .frame(width: UIScreen.main.bounds.width, height: 250)
                 Spacer()
                 // Footer
                 VStack{
